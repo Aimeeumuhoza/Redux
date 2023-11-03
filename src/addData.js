@@ -8,15 +8,17 @@ export default function Add() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [line, setLine] = useState('');
-  const tasks = useSelector(state => state.tasks); 
+  const tasks = useSelector(state => state.task); 
 
   const onSubmit = () => {
     dispatch(addTask({ title, description, line }));
     setTitle("");
     setDescription("");
     setLine("");
-    console.log(addTask.name)
+    console.log(tasks)
   }
+  
+
 
   return (
     <View style={styles.container}>
@@ -42,7 +44,7 @@ export default function Add() {
         <TouchableOpacity style={styles.addButton} onPress={onSubmit}>
           <Text style={styles.buttonText}>Add</Text>
         </TouchableOpacity>
-        {/* Button to view tasks */}
+       
         <TouchableOpacity style={styles.addButton}>
           <Text style={styles.buttonText}>View</Text>
         </TouchableOpacity>
@@ -92,6 +94,7 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderWidth: 1,
   },
+ 
   addButton: {
     backgroundColor: 'blue',
     paddingVertical: 12,
@@ -100,6 +103,12 @@ const styles = StyleSheet.create({
 
 
   },
+  text: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginLeft: 12,
+    marginTop: 12
+},
   buttonText: {
     color: 'white',
     fontSize: 18,

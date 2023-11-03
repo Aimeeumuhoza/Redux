@@ -8,8 +8,11 @@ import { createSlice } from "@reduxjs/toolkit";
     reducers: {
         addTask: (state,action) => {
             const newTask={
-                id:action.payload.task,
-                name:action.payload.task
+                
+                title:action.payload.title,
+                description:action.payload.description,
+                line:action.payload.line,
+
             }
             state.push(newTask)
         },

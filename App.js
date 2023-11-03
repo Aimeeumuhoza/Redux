@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Add from "./src/addData"
-import Navigator from "./Route/homeStack"
 import store from "./Redux/store"
 import { Provider } from 'react-redux';
 
